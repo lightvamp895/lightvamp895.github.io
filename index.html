@@ -1,0 +1,534 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title> Game questionare</title>
+<style>
+	.grid-container {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        outline-offset: 1px;
+    }
+    .outlinebutton {
+        outline-color: black;
+        outline-style: double;
+        outline-width: 5px;
+        outline-offset: 1px;
+        width: fit-content;
+        background-color: red;
+    }
+    .outline {
+        outline-color:black;
+        padding: 5px;
+        outline-style: double;
+        outline-width: 5px;
+        outline-offset: -4px;
+    }	
+    .padding {
+		padding:6px;
+	}
+	.dropdown {
+	position: relative;
+	}
+	
+	.dropbtn {
+	background-color: #4CAF50;
+	color: white;
+	padding: 16px;
+	font-size: 16px;
+	border: none;
+	cursor: pointer;
+	}
+	.dropdown-content {
+	display: none;
+	position: absolute;
+	background-color: #f9f9f9;
+	min-width: 100px;
+	max-height:120px;
+	overflow-y: auto;  
+	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	}
+	.dropdown-content a {
+	color: black;
+	padding: 12px 16px;
+	text-decoration: none;
+	display: block;
+	}
+	.dropdown-content a:hover {
+	background-color: #f1f1f1;
+	}
+	.dropdown:hover .dropdown-content {
+	display: block;
+	}
+	.dropdown:hover .dropbtn {
+	background-color: #3e8e41;
+	}
+	body {
+		background-color: plum;
+		background-size: auto;
+		background-repeat: repeat;
+	}
+	p{
+		font-size: 16px;
+		color:black;
+	}
+
+	.dark h1{
+		color:white;
+	}
+	.dark p{
+		color:white;
+	}
+	.left{
+		background-color:yellow;
+	}
+	.right{
+		background-color:red;
+	}
+	.question{
+		background-color:lightblue;
+	}
+	.dark .right{
+		background-color:#8b0000;
+	}
+	.dark .left{
+		background-color:#b8860b;
+	}
+	.dark .question{
+		background-color:#1e3a5f;
+	}
+	.dark .dropdown-content {
+		display: none;
+		position: absolute;
+		background-color: #2a2a3e;
+		min-width: 100px;
+		max-height:120px;
+		overflow-y: auto;  
+		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	}
+	.dark .dropdown-content a:hover {
+		background-color: #3a3a5e;
+	}
+	body.dark{
+		background-color:#3b0030;
+	}
+	.dark .dropbtn {
+		background-color: #1a3a1a;
+		color: white;
+		padding: 16px;
+		font-size: 16px;
+		border: none;
+		cursor: pointer;
+	}
+	
+@media (max-width: 768px) {
+    body{
+        background-color: green;
+        min-height: 320vh;
+    }
+	body.dark{
+		background-color:#0a2818;
+	}
+    p{
+        font-size: 24px;
+        font-weight: bold;
+    }
+	
+    .outline {
+        outline-color:black;
+        padding: 10px;
+        outline-style: double;
+        outline-width: 5px;
+        outline-offset: -10px;
+    }
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #129c60;
+        min-width: 100px;
+        max-height:120px;
+        overflow-y: auto;  
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    }
+	.dark .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #0a4a30;
+        min-width: 100px;
+        max-height:120px;
+        overflow-y: auto;  
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    }
+
+}
+@media (min-width: 768px ) and (max-width:1440px){ 
+    body{
+        background-color: orange;
+        min-height: 260vh;
+    }
+	body.dark{
+		background-color: #3a2000;
+	}
+    .dropbtn {
+        background-color: aquamarine;
+        color: peru;
+        padding: 16px;
+        font-size: 32px;
+        border: rosybrown;
+        cursor: grabbing;
+    }
+	.dark .dropbtn {
+        background-color: #1a5c5c;
+        color: peru;
+        padding: 16px;
+        font-size: 32px;
+        border: rosybrown;
+        cursor: grabbing;
+    }
+    button.animate {
+        position: relative;
+        animation-name: myAnimation;
+        animation-duration: 4s;
+    }
+    .outlinebutton {
+        outline-color: black;
+        outline-style: double;
+        outline-width: 5px;
+        outline-offset: 1px;
+        width: fit-content;
+        background-color: red;
+        
+    }
+    p{
+        font-size: 20px;
+        font-weight: bold;
+    }
+	
+    @keyframes myAnimation {
+        0%   {background-color:red; left:0px; top:0px;}
+        25%  {background-color:yellow; left:200px; top:0px;}
+        50%  {background-color:blue; left:200px; top:200px;}
+        75%  {background-color:green; left:0px; top:200px;}
+        100% {background-color:red; left:0px; top:0px;}
+    }
+}
+</style>
+
+</head>
+
+<body>
+    
+    <div class="grid-container outline">
+        <div class="left" >
+            <h1> About</h1>
+            <p>This site will ask you some questions and then based on them will 
+                determine what genre of games you like. It can be everything from 
+                sport to grand strategy games.</p>
+        </div>
+        <div class="padding right">
+            <h1>Developers</h1>
+            <p>Razvan Furcea</p>
+        </div>
+    </div>
+	<button onclick="document.body.classList.toggle('dark')" style="background-color:#808080;"><p>Light/Dark Mode</p></button>
+    <h1>Begin</h1>
+
+    <div class="grid-container outline">
+        <div class="question">
+            <h1> Question 1</h1>
+            <p>Do you enjoy playing/watching sports?</p>
+        </div>
+        <div class="question dropdown">
+            <button class="dropbtn"><p>Answer</p></button>
+                
+            <div class="dropdown-content">
+            <a onclick="setAnswer('question9', 1, this, ['sport'],['arcade'],['coop'],['hardcore'])">1</a>
+            <a onclick="setAnswer('question9', 2, this, ['sport'],['arcade'],['coop'],['hardcore'])">2</a>
+            <a onclick="setAnswer('question9', 3, this, ['sport'],['arcade'],['coop'],['hardcore'])">3</a>
+            <a onclick="setAnswer('question9', 4, this, ['sport'],['arcade'],['coop'],['hardcore'])">4</a>
+            <a onclick="setAnswer('question9', 5, this, ['sport'],['arcade'],['coop'],['hardcore'])">5</a>
+            </div>
+        </div>
+    </div>
+    <p>‎ </p>
+    <p>‎ </p>
+
+    <div class="grid-container outline">
+        <div class="question">
+            <h1> Question 2</h1>
+            <p>Do you try to make new friends often?</p>
+        </div>
+        <div class="question dropdown">
+            <button class="dropbtn"><p>Answer</p></button>
+                
+            <div class="dropdown-content">
+            <a onclick="setAnswer('question2', 1, this, ['coop'],['versus'],['casual'],['solo'])">1</a>
+            <a onclick="setAnswer('question2', 2, this, ['coop'],['versus'],['casual'],['solo'])">2</a>
+            <a onclick="setAnswer('question2', 3, this, ['coop'],['versus'],['casual'],['solo'])">3</a>
+            <a onclick="setAnswer('question2', 4, this, ['coop'],['versus'],['casual'],['solo'])">4</a>
+            <a onclick="setAnswer('question2', 5, this, ['coop'],['versus'],['casual'],['solo'])">5</a>
+            </div>
+        </div>
+    </div>
+    <p>‎ </p>
+    <p>‎ </p>
+
+    <div class="grid-container outline">
+        <div class="question">
+            <h1> Question 3</h1>
+            <p>Do you read a lot?</p>
+        </div>
+        <div class="question dropdown">
+            <button class="dropbtn"><p>Answer</p></button>
+                
+            <div class="dropdown-content">
+            <a onclick="setAnswer('question3', 1, this, ['rpg'],['fps'],['long'],['buffer'])">1</a>
+            <a onclick="setAnswer('question3', 2, this, ['rpg'],['fps'],['long'],['buffer'])">2</a>
+            <a onclick="setAnswer('question3', 3, this, ['rpg'],['fps'],['long'],['buffer'])">3</a>
+            <a onclick="setAnswer('question3', 4, this, ['rpg'],['fps'],['long'],['buffer'])">4</a>
+            <a onclick="setAnswer('question3', 5, this, ['rpg'],['fps'],['long'],['buffer'])">5</a>
+            </div>
+        </div>
+    </div>
+    <p>‎ </p>
+    <p>‎ </p>
+
+    <div class="grid-container outline">
+        <div class="question">
+            <h1> Question 4</h1>
+            <p>Do you need Subways Surfers gameplay and clips of Family Guy to pay attention?</p>
+        </div>
+        <div class="question dropdown">
+            <button class="dropbtn"><p>Answer</p></button>
+                
+            <div class="dropdown-content">
+            <a onclick="setAnswer('question4', 1, this, ['short'],['long'],['arcade'],['strategy'])">1</a>
+            <a onclick="setAnswer('question4', 2, this, ['short'],['long'],['arcade'],['strategy'])">2</a>
+            <a onclick="setAnswer('question4', 3, this, ['short'],['long'],['arcade'],['strategy'])">3</a>
+            <a onclick="setAnswer('question4', 4, this, ['short'],['long'],['arcade'],['strategy'])">4</a>
+            <a onclick="setAnswer('question4', 5, this, ['short'],['long'],['arcade'],['strategy'])">5</a>
+            </div>
+        </div>
+    </div>
+    <p>‎ </p>
+    <p>‎ </p>
+
+    <div class="grid-container outline">
+        <div class="question">
+            <h1> Question 5</h1>
+            <p>Do you enjoy difficult or dangerous activities?</p>
+        </div>
+        <div class="question dropdown">
+            <button class="dropbtn"><p>Answer</p></button>
+                
+            <div class="dropdown-content">
+            <a onclick="setAnswer('question5', 1, this, ['hardcore'],['casual'],['puzzle'],['horror'])">1</a>
+            <a onclick="setAnswer('question5', 2, this, ['hardcore'],['casual'],['puzzle'],['horror'])">2</a>
+            <a onclick="setAnswer('question5', 3, this, ['hardcore'],['casual'],['puzzle'],['horror'])">3</a>
+            <a onclick="setAnswer('question5', 4, this, ['hardcore'],['casual'],['puzzle'],['horror'])">4</a>
+            <a onclick="setAnswer('question5', 5, this, ['hardcore'],['casual'],['puzzle'],['horror'])">5</a>
+            </div>
+        </div>
+    </div>
+    <p>‎ </p>
+    <p>‎ </p>
+
+    <div class="grid-container outline">
+        <div class="question">
+            <h1> Question 6</h1>
+            <p>Do you like complex things?</p>
+        </div>
+        <div class="question dropdown">
+            <button class="dropbtn"><p>Answer</p></button>
+                
+            <div class="dropdown-content">
+            <a onclick="setAnswer('question6', 1, this, ['strategy'],['buffer'],['puzzle'],['fps'])">1</a>
+            <a onclick="setAnswer('question6', 2, this, ['strategy'],['buffer'],['puzzle'],['fps'])">2</a>
+            <a onclick="setAnswer('question6', 3, this, ['strategy'],['buffer'],['puzzle'],['fps'])">3</a>
+            <a onclick="setAnswer('question6', 4, this, ['strategy'],['buffer'],['puzzle'],['fps'])">4</a>
+            <a onclick="setAnswer('question6', 5, this, ['strategy'],['buffer'],['puzzle'],['fps'])">5</a>
+            </div>
+        </div>
+    </div>
+    <p>‎ </p>
+    <p>‎ </p>
+
+    <div class="grid-container outline">
+        <div class="question">
+            <h1> Question 7</h1>
+            <p>Do you take opportunities for expressing your creativity?</p>
+        </div>
+        <div class="question dropdown">
+            <button class="dropbtn"><p>Answer</p></button>
+                
+            <div class="dropdown-content">
+            <a onclick="setAnswer('question7', 1, this, ['sandbox'],['horror'],['rpg'],['versus'])">1</a>
+            <a onclick="setAnswer('question7', 2, this, ['sandbox'],['horror'],['rpg'],['versus'])">2</a>
+            <a onclick="setAnswer('question7', 3, this, ['sandbox'],['horror'],['rpg'],['versus'])">3</a>
+            <a onclick="setAnswer('question7', 4, this, ['sandbox'],['horror'],['rpg'],['versus'])">4</a>
+            <a onclick="setAnswer('question7', 5, this, ['sandbox'],['horror'],['rpg'],['versus'])">5</a>
+            </div>
+        </div>
+    </div>
+    <p>‎ </p>
+    <p>‎ </p>
+
+    <div class="grid-container outline">
+        <div class="question">
+            <h1> Question 8</h1>
+            <p>Do you eat bananas a lot?</p>
+        </div>
+        <div class="question dropdown">
+            <button class="dropbtn"><p>Answer</p></button>
+                
+            <div class="dropdown-content">
+            <a onclick="setAnswer('question8', 1, this, ['sandbox'],['solo'],['sport'],['short'])">1</a>
+            <a onclick="setAnswer('question8', 2, this, ['sandbox'],['solo'],['sport'],['short'])">2</a>
+            <a onclick="setAnswer('question8', 3, this, ['sandbox'],['solo'],['sport'],['short'])">3</a>
+            <a onclick="setAnswer('question8', 4, this, ['sandbox'],['solo'],['sport'],['short'])">4</a>
+            <a onclick="setAnswer('question8', 5, this, ['sandbox'],['solo'],['sport'],['short'])">5</a>
+            </div>
+        </div>
+    </div>
+    <p>‎ </p>
+    <p>‎ </p>
+
+    <button id="myButton" type="button" class="outlinebutton" onclick="showResult(genres)"><p>Show your genre.</p></button>
+    <div class="outlinebutton">
+        <h1 id="result"></h1>
+        <p id="description"></p>
+    </div>
+    <script>
+        var answers = {
+        question1: 0,
+        question2: 0,
+        question3: 0,
+        question4: 0,
+        question5: 0,
+        question6: 0,
+        question7: 0,
+        question8: 0,
+        question9: 0,
+        question10: 0,
+        };
+        var genres = {
+            sport: 0,
+            strategy: 0,
+            solo: 0,
+            long: 0,
+            short: 0,
+            fps: 0,
+            rpg: 0,
+            casual:0, 
+            coop:0,
+            versus:0,
+            hardcore:0,
+            puzzle:0,
+            arcade:0,
+            horror:0,
+            sandbox:0,
+            buffer:-99999,
+        };
+
+        function setAnswer(question, value, element, genreListadd,genreListdel,genreListadd2,genreListdel2) {
+            const oldValue = answers[question];
+            var oldEffect;
+            if(oldValue==0){
+                oldEffect=0;
+            }
+            else {
+                oldEffect = Math.max(0, oldValue - 3);
+            }
+            var deloldEffect;
+            if(oldValue==0){
+                deloldEffect=0;
+            }
+            else{
+                deloldEffect = Math.max(0, 3 - oldValue);
+            }
+            
+            answers[question] = value;
+
+           
+            var newEffect = Math.max(0, value - 3);
+            var delnewEffect = Math.max(0, 3 - value);
+
+            genreListadd.forEach(function(genre, index) {
+                if (!(genre in genres)) return;
+                genres[genre] += (newEffect - oldEffect);
+                
+                
+            });
+            
+            genreListdel.forEach((genre) => {
+                if (!(genre in genres)) return;
+
+                genres[genre] += (delnewEffect- deloldEffect);
+            });
+            
+            genreListadd2.forEach(function(genre, index) {
+                if (!(genre in genres)) return;
+                genres[genre] += (newEffect - oldEffect)*0.5;
+                
+                
+            });
+            
+            genreListdel2.forEach((genre) => {
+                if (!(genre in genres)) return;
+
+                genres[genre] += (delnewEffect- deloldEffect)*0.5;
+            });
+            var button = element.closest(".dropdown").querySelector(".dropbtn");
+
+            button.textContent = answers[question];
+
+            document.getElementById("question1display").textContent = "Sport score: " + genres.sport;
+        }
+        function getResult(arr){
+            var maxim=-1;
+            var nume;
+            for(var key in arr){
+                if(arr[key]>maxim){
+                    nume=key;
+                    maxim=arr[key];
+                }
+            }
+            if(arr[nume]==0){
+                return null;
+            }
+            else{
+                return nume;
+            }
+        }
+        function showResult(arr){
+            var result=getResult(arr);
+            if(result!=null){
+                document.getElementById("result").textContent = "Your favourite type of game is: " + result;
+                showDescription(result);
+            }
+            const btn = document.getElementById("myButton");
+            btn.classList.add("animate");
+        }
+
+        var descriptions={
+            sport:"One of the most straight-forward genres, games like FIFA and NBA2K are probably your favourite.",
+            strategy:"Having very complex games that makes the user thoroughly think their every move, it offers anything from grand strategy games like Crusader Kings for history fans to games like chess for board games enjoyers.",
+            solo:"Althrough almost every genre has solo games, the most prevelant ones are rpg and fps games. They can only be played with one player.",
+            coop:"Similar to solo games, they appear in many genres; some recommandation are Castle Crashers or Portal 2. Theese games are multyplayer, and the players can only cooperate and can very rarely, if at all, fight each other.",
+            versus:"In this genre the players always fight each other, either free for all or in teams. This is mostly seen in FPS games, like CS2 or party games, like Bopl Battle.",
+            rpg:"Role playing games are ussualy story-driven games with a very big arsenal of powers and abbilities that allow the player to costumize every game.",
+            casual:"Easyer, calmer games, for example Stardew Valley.",
+            hardcore:"Very difficult games with a steep learning curve. Examples: Hollow Knight.",
+            fps:"You might enjoy First Person Shooters like CS2.",
+            puzzle:"Games with different kinds of puzzles.",
+            horror:"Scary games like Five Nights at Freddy's.",
+            sandbox:"Games with that give the player a lot of freedom like Minecraft.",
+            short:"Short games.",
+            long:"Longer games.",
+            arcade:"Old 2d games like Space Invaders."
+        }
+        function showDescription(genre){
+            document.getElementById("description").textContent = descriptions[genre];
+        }
+        
+</script>
+</body>
