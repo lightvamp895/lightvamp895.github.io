@@ -488,24 +488,37 @@
             
         }
         function getResult(arr){
-            var maxim=-1;
-            var nume;
+            var maxim = -Infinity;
+            var nume = null;
             for(var key in arr){
-                if(arr[key]>maxim){
-                    nume=key;
-                    maxim=arr[key];
+                if(arr[key] > maxim){
+                    nume = key;
+                    maxim = arr[key];
                 }
             }
-            if(arr[nume]==0){
-                return null;
+
+            var answered = false;
+            for(var q in answers){
+                if(answers[q] !== 0){
+                    answered = true;
+                    break;
+                }
             }
-            else{
-                return nume;
+
+            if(maxim === 0){
+                return answered ? "undecided" : "no-answer";
             }
+            return nume;
         }
         function showResult(arr){
-            var result=getResult(arr);
-            if(result!=null){
+            var result = getResult(arr);
+            if(result === "no-answer"){
+                document.getElementById("result").textContent = "You haven't chosen anything.";
+                document.getElementById("description").textContent = "Please choose at least one answer.";
+            } else if(result === "undecided"){
+                document.getElementById("result").textContent = "Undecided";
+                document.getElementById("description").textContent = "Your answers were too neutral to choose a genre.";
+            } else {
                 document.getElementById("result").textContent = "Your favourite type of game is: " + result;
                 showDescription(result);
             }
