@@ -71,13 +71,19 @@
 		font-size: 16px;
 		color:black;
 	}
-
+    span{
+		font-size: 16px;
+		color:black;
+	}
 	.dark h1{
 		color:white;
 	}
 	.dark p{
 		color:white;
 	}
+    .dark span{
+        color:white;
+    }
 	.left{
 		background-color:yellow;
 	}
@@ -229,7 +235,7 @@
             <p>Razvan Furcea</p>
         </div>
     </div>
-	<button onclick="document.body.classList.toggle('dark')" style="background-color:#808080;"><p>Light/Dark Mode</p></button>
+	<button onclick="document.body.classList.toggle('dark')" style="background-color:#808080;"><span>Light/Dark Mode</span></button>
     <h1>Begin</h1>
 
     <div class="grid-container outline">
@@ -238,14 +244,14 @@
             <p>Do you enjoy playing/watching sports?</p>
         </div>
         <div class="question dropdown">
-            <button class="dropbtn"><p>Answer</p></button>
+            <button class="dropbtn"><span>Answer</span></button>
                 
             <div class="dropdown-content">
-            <a onclick="setAnswer('question9', 1, this, ['sport'],['arcade'],['coop'],['hardcore'])">1</a>
-            <a onclick="setAnswer('question9', 2, this, ['sport'],['arcade'],['coop'],['hardcore'])">2</a>
-            <a onclick="setAnswer('question9', 3, this, ['sport'],['arcade'],['coop'],['hardcore'])">3</a>
-            <a onclick="setAnswer('question9', 4, this, ['sport'],['arcade'],['coop'],['hardcore'])">4</a>
-            <a onclick="setAnswer('question9', 5, this, ['sport'],['arcade'],['coop'],['hardcore'])">5</a>
+            <a onclick="setAnswer('question1', 1, this, ['sport'],['arcade'],['coop'],['hardcore'])">1</a>
+            <a onclick="setAnswer('question1', 2, this, ['sport'],['arcade'],['coop'],['hardcore'])">2</a>
+            <a onclick="setAnswer('question1', 3, this, ['sport'],['arcade'],['coop'],['hardcore'])">3</a>
+            <a onclick="setAnswer('question1', 4, this, ['sport'],['arcade'],['coop'],['hardcore'])">4</a>
+            <a onclick="setAnswer('question1', 5, this, ['sport'],['arcade'],['coop'],['hardcore'])">5</a>
             </div>
         </div>
     </div>
@@ -258,7 +264,7 @@
             <p>Do you try to make new friends often?</p>
         </div>
         <div class="question dropdown">
-            <button class="dropbtn"><p>Answer</p></button>
+            <button class="dropbtn"><span>Answer</span></button>
                 
             <div class="dropdown-content">
             <a onclick="setAnswer('question2', 1, this, ['coop'],['versus'],['casual'],['solo'])">1</a>
@@ -278,7 +284,7 @@
             <p>Do you read a lot?</p>
         </div>
         <div class="question dropdown">
-            <button class="dropbtn"><p>Answer</p></button>
+            <button class="dropbtn"><span>Answer</span></button>
                 
             <div class="dropdown-content">
             <a onclick="setAnswer('question3', 1, this, ['rpg'],['fps'],['long'],['buffer'])">1</a>
@@ -298,7 +304,7 @@
             <p>Do you need Subways Surfers gameplay and clips of Family Guy to pay attention?</p>
         </div>
         <div class="question dropdown">
-            <button class="dropbtn"><p>Answer</p></button>
+            <button class="dropbtn"><span>Answer</span></button>
                 
             <div class="dropdown-content">
             <a onclick="setAnswer('question4', 1, this, ['short'],['long'],['arcade'],['strategy'])">1</a>
@@ -318,7 +324,7 @@
             <p>Do you enjoy difficult or dangerous activities?</p>
         </div>
         <div class="question dropdown">
-            <button class="dropbtn"><p>Answer</p></button>
+            <button class="dropbtn"><span>Answer</span></button>
                 
             <div class="dropdown-content">
             <a onclick="setAnswer('question5', 1, this, ['hardcore'],['casual'],['puzzle'],['horror'])">1</a>
@@ -338,7 +344,7 @@
             <p>Do you like complex things?</p>
         </div>
         <div class="question dropdown">
-            <button class="dropbtn"><p>Answer</p></button>
+            <button class="dropbtn"><span>Answer</span></button>
                 
             <div class="dropdown-content">
             <a onclick="setAnswer('question6', 1, this, ['strategy'],['buffer'],['puzzle'],['fps'])">1</a>
@@ -358,7 +364,7 @@
             <p>Do you take opportunities for expressing your creativity?</p>
         </div>
         <div class="question dropdown">
-            <button class="dropbtn"><p>Answer</p></button>
+            <button class="dropbtn"><span>Answer</span></button>
                 
             <div class="dropdown-content">
             <a onclick="setAnswer('question7', 1, this, ['sandbox'],['horror'],['rpg'],['versus'])">1</a>
@@ -378,7 +384,7 @@
             <p>Do you eat bananas a lot?</p>
         </div>
         <div class="question dropdown">
-            <button class="dropbtn"><p>Answer</p></button>
+            <button class="dropbtn"><span>Answer</span></button>
                 
             <div class="dropdown-content">
             <a onclick="setAnswer('question8', 1, this, ['sandbox'],['solo'],['sport'],['short'])">1</a>
@@ -392,7 +398,7 @@
     <p>‎ </p>
     <p>‎ </p>
 
-    <button id="myButton" type="button" class="outlinebutton" onclick="showResult(genres)"><p>Show your genre.</p></button>
+    <button id="myButton" type="button" class="outlinebutton" onclick="showResult(genres)"><span>Show your genre.</span></button>
     <div class="outlinebutton">
         <h1 id="result"></h1>
         <p id="description"></p>
@@ -407,8 +413,6 @@
         question6: 0,
         question7: 0,
         question8: 0,
-        question9: 0,
-        question10: 0,
         };
         var genres = {
             sport: 0,
@@ -481,7 +485,7 @@
 
             button.textContent = answers[question];
 
-            document.getElementById("question1display").textContent = "Sport score: " + genres.sport;
+            
         }
         function getResult(arr){
             var maxim=-1;
@@ -532,3 +536,4 @@
         
 </script>
 </body>
+</html>
